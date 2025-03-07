@@ -140,6 +140,7 @@ class SignHelper
         $this->awsHeaders['Host'] = $this->host;
         $this->awsHeaders['X-Amz-Date'] = $this->xAmzDate;
         $this->awsHeaders['X-Amz-Target'] = $this->buildAmzTarget();
+        $this->awsHeaders['Accept'] = 'application/json'; // added to stop getting 400 bad request errors from Amazon
 
         /* Sort headers */
         ksort($this->awsHeaders);
